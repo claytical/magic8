@@ -1,0 +1,115 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#000;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    color: #ffffff;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+                                   /* offset horizontal: half of text area width */
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+.full {
+    width: 100%;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#question {
+    height: 120px;
+}
+#ask {
+    height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.gradient-button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 15px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.gradient-button:active {
+	position: relative;
+	top: 1px;
+}
+
+.purple {
+	color: #fef4e9;
+	border: solid 1px #551A8B;
+	background: #8A2BE2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#8A2BE2), to(#551A8B));
+}
+
+.purple:active {
+	color: #fef4e9;
+	background: -webkit-gradient(linear, left top, left bottom, from(#551A8B), to(#694489));
+}
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+    }
+
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    padding:0px;
+    text-align:center;
+}
+
+#answer {
+    font-size: 45px;
+    text-align: center;
+    padding: 50px;
+    font-weight: bold;
+    min-height: 180px;
+}
+
