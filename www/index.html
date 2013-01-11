@@ -36,6 +36,8 @@
                 <div id="answer"></div>
                 <button id="askagain" class="gradient-button purple full">Ask Again</button>
                 <button id="newquestion" class="gradient-button purple full">New Question</button>
+                <button id="share" class="gradient-button purple full">Share Results</button>
+                <button id="tweet" class="gradient-button purple full">Tweet Results</button>
 
             </div>
         </div>
@@ -43,6 +45,7 @@
         <script type="text/javascript" src="cordova-2.3.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/zepto.min.js"></script>
+        <script type="text/javascript" src="js/social.js"></script>
         <script type="text/javascript">
             app.initialize();
             var answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes – definitely', 'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy, try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
@@ -83,6 +86,41 @@
             $('#newquestion').on('click', function(e) {
                 newQuestion();
             });
+
+            $('#share').on('click', function(e) {
+                shareResults();
+            });
+            $('#tweet').on('click', function(e) {
+                tweetResults();
+            });
+            
+
+            
+            function shareResults() {
+                
+                var qa = $('#question').val() + " " + $('#answer').text() + " #magic8";
+                SocialFrameworkPlugin.show( shareSuccess, shareError, qa);
+            }
+            
+            function tweetResults() {
+                var qa = $('#question').val() + " " + $('#answer').text() + " #magic8";
+                SocialFrameworkPlugin.tweet( shareSuccess, shareError, qa);
+                
+            }
+
+            function fbResults() {
+                var qa = $('#question').val() + " " + $('#answer').text() + " #magic8";
+                SocialFrameworkPlugin.postToFacebook( shareSuccess, shareError, qa);
+                
+            }
+
+            
+            function shareSuccess() {
+                console.log("Sharing Successful");
+            }
+            function shareError() {
+                console.log("Error sharing");
+            }
             </script>
     </body>
 </html>

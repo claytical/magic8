@@ -42,6 +42,9 @@
 		6F5D2273169F42170063B39F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5D2272169F42170063B39F /* Default.png */; };
 		6F5D2275169F421A0063B39F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5D2274169F421A0063B39F /* Default@2x.png */; };
 		6F5D2278169F42400063B39F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5D2276169F421F0063B39F /* Default-568h@2x.png */; };
+		6F5D227F16A0968D0063B39F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5D227D16A0968D0063B39F /* Accounts.framework */; };
+		6F5D228016A0968D0063B39F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5D227E16A0968D0063B39F /* Social.framework */; };
+		6F5D228316A096C30063B39F /* SocialFrameworkPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5D228116A096C30063B39F /* SocialFrameworkPlugin.m */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,10 @@
 		6F5D2272169F42170063B39F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6F5D2274169F421A0063B39F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6F5D2276169F421F0063B39F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6F5D227D16A0968D0063B39F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		6F5D227E16A0968D0063B39F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		6F5D228116A096C30063B39F /* SocialFrameworkPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialFrameworkPlugin.m; sourceTree = "<group>"; };
+		6F5D228216A096C30063B39F /* SocialFrameworkPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialFrameworkPlugin.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Magic8-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Magic8-Info.plist"; path = "../Magic8-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Magic8/config.xml; sourceTree = "<group>"; };
@@ -116,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F5D227F16A0968D0063B39F /* Accounts.framework in Frameworks */,
+				6F5D228016A0968D0063B39F /* Social.framework in Frameworks */,
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -177,6 +186,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6F5D227D16A0968D0063B39F /* Accounts.framework */,
+				6F5D227E16A0968D0063B39F /* Social.framework */,
 				6F5D2276169F421F0063B39F /* Default-568h@2x.png */,
 				6F5D2274169F421A0063B39F /* Default@2x.png */,
 				6F5D2272169F42170063B39F /* Default.png */,
@@ -253,6 +264,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				6F5D228116A096C30063B39F /* SocialFrameworkPlugin.m */,
+				6F5D228216A096C30063B39F /* SocialFrameworkPlugin.h */,
 			);
 			name = Plugins;
 			path = Magic8/Plugins;
@@ -420,6 +433,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				6F5D228316A096C30063B39F /* SocialFrameworkPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
