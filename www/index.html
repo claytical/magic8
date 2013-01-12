@@ -27,11 +27,15 @@
     </head>
     <body>
         <div class="app">
+            <!-- This is the structure of our app. -->
+            <!-- Header -->
             <h1>Magic 8 Ball</h1>
+            <!-- First page, not hidden -->
             <div id="asking">
             <textarea id="question" name="question" class="full" placeholder="To what question do you seek the answer to?"></textarea>
             <button id="ask" class="gradient-button purple full">Ask</button>
             </div>
+            <!-- Second page, hidden for now -->
             <div id="answering" style="display:none">
                 <div id="answer"></div>
                 <button id="askagain" class="gradient-button purple full">Ask Again</button>
@@ -44,9 +48,13 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/zepto.min.js"></script>
         <script type="text/javascript">
+            //Initialize Cordova
             app.initialize();
+            
+            //Create an array of answers
             var answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes – definitely', 'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy, try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
             
+            //a function to get a random answer
             function getAnswer() {
                 $('#asking').hide();
                 $('#answering').show();
@@ -54,15 +62,13 @@
                 $('#answer').text(answers[selectedResponse]);
             }
             
+            //a function to reset everything to ask a new question
             function newQuestion() {
                 $('#question').val("");
                 $('#asking').show();
                 $('#answering').hide();
                 
             }
-            $('#ask').on('click', function(e) {
-                         getAnswer();
-            });
             
             /*
              we could also just use the built in alert system instead of showing the results through HTML
@@ -70,15 +76,21 @@
              navigator.notification.alert(answers[selectedResponse], null, " ", "OK");
              */
 
+            // we set a few buttons clicks to run getAnswer
+            $('#ask').on('click', function(e) {
+                    getAnswer();
+                });
             
             $('#askagain').on('click', function(e) {
-                              getAnswer();
-                              });
+                    getAnswer();
+                });
 
+            // this runs when the user hits "done" on the soft keyboard
             $("input[type=text], textarea").bind("blur", function(e) {
                 getAnswer();
             });
             
+            // finally set a click for the new question button
                         
             $('#newquestion').on('click', function(e) {
                 newQuestion();

@@ -49,6 +49,8 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+/* start our custom CSS */
+
 #question {
     height: 120px;
 }
@@ -58,6 +60,8 @@ body {
     text-transform: uppercase;
 
 }
+
+/* if we're just using webkit on safari, makes gradients pretty easy */
 
 .gradient-button {
 	display: inline-block;
@@ -78,7 +82,7 @@ body {
 	position: relative;
 	top: 1px;
 }
-
+/* we could repurpose this to make other colors */
 .purple {
 	color: #fef4e9;
 	border: solid 1px #551A8B;
@@ -90,6 +94,8 @@ body {
 	color: #fef4e9;
 	background: -webkit-gradient(linear, left top, left bottom, from(#551A8B), to(#694489));
 }
+
+
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
